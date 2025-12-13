@@ -38,4 +38,4 @@ CREATE TABLE IF NOT EXISTS order_items (
 );
 
 CREATE INDEX IF NOT EXISTS
-daily_index ON orders(created_at)
+daily_index ON orders(created_at);
