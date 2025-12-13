@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = ON;
+
 -- Creates the menu table
 CREATE TABLE IF NOT EXISTS menu (
   id INTEGER PRIMARY KEY ,
@@ -13,7 +15,7 @@ CREATE TABLE IF NOT EXISTS orders (
   order_type TEXT NOT NULL,
 
   customer_name TEXT,
-  phone_no INTEGER,
+  phone_no TEXT,
   address TEXT,
   table_no INTEGER, 
 
@@ -34,3 +36,6 @@ CREATE TABLE IF NOT EXISTS order_items (
   FOREIGN KEY(order_id) REFERENCES orders(id),
   FOREIGN KEY(menu_id) REFERENCES menu(id)
 );
+
+CREATE INDEX IF NOT EXISTS
+daily_index ON orders(created_at)
