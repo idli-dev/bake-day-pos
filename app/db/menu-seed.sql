@@ -1,4 +1,4 @@
-INSERT INTO
+INSERT OR IGNORE INTO
     menu (item_name, price)
 VALUES
     -- ==================================================
