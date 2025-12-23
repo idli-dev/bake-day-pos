@@ -1,4 +1,11 @@
-from app.app import main
+from app.modules.sql import initDb
 
-if __name__ == "__main__":
-    main()
+
+def main():
+    try:
+        initDb()
+    except Exception as e:
+        print(f"An error has occured: {e}")
+        return
+
+    print("\nDatabase created.")
